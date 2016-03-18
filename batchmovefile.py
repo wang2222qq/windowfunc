@@ -54,7 +54,6 @@ if __name__ == '__main__':
          continue      
       break  
    movefile(suffix,inpath,outpath1)
-   print("移动目录[%s]下所有后缀[%s]成功！" % (inpath,suffix) )
-   print("请到文件夹[%s]下查看移动后的文件!" % (outpath) )
+   
    
    
