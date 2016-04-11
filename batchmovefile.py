@@ -1,7 +1,8 @@
 #/bin/usr/python
 #-*- coding:utf-8 -*-
 
-import os,os.path
+import os
+import os.path
 import re
 
 __author__ = 'Francics'
@@ -37,23 +38,24 @@ def movefile(suffix,inpath,outpath):
                continue
    
 if __name__ == '__main__':
-   
-   while True:
-      inpath = input('请输入源文件夹路径:')
-      if not os.path.exists(inpath):
-         print("输入的文件夹不存在")
-         continue
-      outpath = input('请输入目标文件夹路径:')
-      if not os.path.exists(outpath):
-         print("输入的文件夹不存在")
-         continue
-      
-      suffix = input('请输入文件后缀:')
-      if re.search(r'\.',suffix) != None:
-         print("文件后缀不需要输入符合'.'")
-         continue      
-      break  
-   movefile(suffix,inpath,outpath1)
-   
-   
-   
+
+    inpath = None
+    outpath = None
+    suffix = None
+
+    while True:
+        inpath = input('请输入源文件夹路径:')
+        if not os.path.exists(inpath):
+            print("输入的文件夹不存在")
+            continue
+        outpath = input('请输入目标文件夹路径:')
+        if not os.path.exists(outpath):
+            print("输入的文件夹不存在")
+            continue
+
+        suffix = input('请输入文件后缀:')
+        if re.search(r'\.', suffix) != None:
+            print("文件后缀不需要输入符合'.'")
+            continue
+        break
+    movefile(suffix, inpath, outpath)
